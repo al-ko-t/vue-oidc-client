@@ -4226,7 +4226,10 @@ function createOidcAuth(_authName, defaultSignInType, _appUrl, oidcConfig, logge
         var _this2 = this;
 
         this.myRouter = router;
+        external_oidc_client_["Log"].debug('in userouter');
         router.beforeEach(function (to, from, next) {
+          external_oidc_client_["Log"].debug('in beforeeach for router');
+
           if (to.matched.some(function (record) {
             return record.meta.authName === _this2.authName;
           })) {

@@ -248,8 +248,10 @@ export function createOidcAuth(
       },
       useRouter(router: Router) {
         this.myRouter = router
+        Log.debug('in userouter')
 
         router.beforeEach((to, from, next) => {
+          Log.debug('in beforeeach for router')
           if (
             to.matched.some(record => record.meta.authName === this.authName)
           ) {
