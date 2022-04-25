@@ -4240,7 +4240,10 @@ function createOidcAuth(authName, defaultSignInType, appUrl, oidcConfig, logger,
     },
     useRouter: function useRouter(router) {
       myRouter = router;
+      external_oidc_client_["Log"].debug('userouter in vue3');
       router.beforeEach(function (to, from, next) {
+        external_oidc_client_["Log"].debug('in beforeach ');
+
         if (to.matched.some(function (record) {
           return record.meta.authName === authObj.authName;
         })) {

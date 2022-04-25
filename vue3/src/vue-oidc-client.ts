@@ -259,8 +259,9 @@ export function createOidcAuth(
     },
     useRouter(router: Router) {
       myRouter = router
-
+      Log.debug('userouter in vue3')
       router.beforeEach((to, from, next) => {
+        Log.debug('in beforeach ')
         if (
           to.matched.some(record => record.meta.authName === authObj.authName)
         ) {
